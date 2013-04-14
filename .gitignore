@@ -96,7 +96,7 @@ xcuserdata
 # Workspace layout is quite spammy. For reference:
 #
 # /(root)/
-#   /(project-name).xcodeproj/
+   /ios.xcodeproj/
      project.pbxproj
     /project.xcworkspace/
 	ios.xcodeproj/project.xcworkspace/
