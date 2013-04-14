@@ -18,7 +18,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.49 green:0.59 blue:0.59 alpha:1.0];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    firstButton.frame = CGRectMake(100, 100, 100, 44);
+    [firstButton setTitle:@"Button" forState:UIControlStateNormal];
+    [self.view addSubview:firstButton];
+    [firstButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
