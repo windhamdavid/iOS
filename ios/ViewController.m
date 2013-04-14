@@ -23,8 +23,25 @@
     firstButton.frame = CGRectMake(100, 100, 100, 44);
     [firstButton setTitle:@"Button" forState:UIControlStateNormal];
     [self.view addSubview:firstButton];
+    [firstButton addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
     [firstButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
+    
+    UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 30, 200, 44)];
+    firstLabel.backgroundColor = [UIColor clearColor];
+    firstLabel.text = @"Zeken Woozer";
+    [self.view addSubview:firstLabel];
 }
+
+- (void)buttonPressed:(UIButton *)sender
+{
+    NSLog(@"Button pressed, sender: %@", sender);
+    self.view.alpha = ((double)arc4random() / 0x100000000);
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
