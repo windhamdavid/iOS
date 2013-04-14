@@ -97,16 +97,17 @@ xcuserdata
 #
 # /(root)/
 #   /(project-name).xcodeproj/
-#     project.pbxproj
-#     /project.xcworkspace/
+     project.pbxproj
+    /project.xcworkspace/
+	ios.xcodeproj/project.xcworkspace/
 #       contents.xcworkspacedata
-#       /xcuserdata/
-#         /(your name)/xcuserdatad/
+      /xcuserdata/
+        /david/xcuserdatad/
 #           UserInterfaceState.xcuserstate
-#     /xcsshareddata/
+    /xcsshareddata/
 #       /xcschemes/
 #         (shared scheme name).xcscheme
-#     /xcuserdata/
+    /xcuserdata/
 #       /(your name)/xcuserdatad/
 #         (private scheme).xcscheme
 #         xcschememanagement.plist
