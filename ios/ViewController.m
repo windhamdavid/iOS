@@ -27,7 +27,7 @@
     self.fiftyPercentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.fiftyPercentButton.frame = CGRectMake(100, 100, 100, 44);
     [self.fiftyPercentButton setTitle:@"50%" forState:UIControlStateNormal];
-    [self.view addSubview:fiftyPercentButton];
+    [self.view addSubview:self.fiftyPercentButton];
     [self.fiftyPercentButton addTarget:self
                     action:@selector(buttonPressed:)
           forControlEvents:UIControlEventTouchUpInside];
@@ -36,7 +36,7 @@
     self.hundredPercentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.hundredPercentButton.frame = CGRectMake(100, 300, 100, 44);
     [self.hundredPercentButton setTitle:@"100%" forState:UIControlStateNormal];
-    [self.view addSubview:hundredPercentButton];
+    [self.view addSubview:self.hundredPercentButton];
     [self.hundredPercentButton addTarget:self
                     action:@selector(buttonPressed:)
           forControlEvents:UIControlEventTouchUpInside];
