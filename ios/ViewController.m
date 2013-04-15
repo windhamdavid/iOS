@@ -24,34 +24,34 @@
     firstLabel.text = @"Zeken Woozer";
     [self.view addSubview:firstLabel];
     
-    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    firstButton.frame = CGRectMake(100, 100, 100, 44);
-    [firstButton setTitle:@"50%" forState:UIControlStateNormal];
-    [self.view addSubview:firstButton];
-    [firstButton addTarget:self
+    self.fiftyPercentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.fiftyPercentButton.frame = CGRectMake(100, 100, 100, 44);
+    [self.fiftyPercentButton setTitle:@"50%" forState:UIControlStateNormal];
+    [self.view addSubview:fiftyPercentButton];
+    [self.fiftyPercentButton addTarget:self
                     action:@selector(buttonPressed:)
           forControlEvents:UIControlEventTouchUpInside];
-    [firstButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
+    [self.fiftyPercentButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
     
-    UIButton *secondButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    secondButton.frame = CGRectMake(100, 300, 100, 44);
-    [secondButton setTitle:@"100%" forState:UIControlStateNormal];
-    [self.view addSubview:secondButton];
-    [secondButton addTarget:self
+    self.hundredPercentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.hundredPercentButton.frame = CGRectMake(100, 300, 100, 44);
+    [self.hundredPercentButton setTitle:@"100%" forState:UIControlStateNormal];
+    [self.view addSubview:hundredPercentButton];
+    [self.hundredPercentButton addTarget:self
                     action:@selector(buttonPressed:)
           forControlEvents:UIControlEventTouchUpInside];
-    [secondButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
+    [self.hundredPercentButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
 
 }
 
 - (void)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Button pressed, sender: %@", sender);
-    if ([sender.titleLabel.text isEqualToString:@"50%"]) {
+    if ([sender isEqual:self.fiftyPercentButton ]) {
         self.view.alpha = .5;
     } else {
+        self.view.alpha = 1;
     }
-    self.view.alpha = 1;
 }
 
 
@@ -74,8 +74,6 @@
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches ended event occured");
-    self.view.alpha = ((double)arc4random() / 0x100000000);
-
 }
 
 @end
