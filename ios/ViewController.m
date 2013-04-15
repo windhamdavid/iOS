@@ -18,10 +18,15 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.49 green:0.59 blue:0.59 alpha:1.0];
+    
+    UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 30, 200, 44)];
+    firstLabel.backgroundColor = [UIColor clearColor];
+    firstLabel.text = @"Zeken Woozer";
+    [self.view addSubview:firstLabel];
 	
     UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     firstButton.frame = CGRectMake(100, 100, 100, 44);
-    [firstButton setTitle:@"Make 50%" forState:UIControlStateNormal];
+    [firstButton setTitle:@"50%" forState:UIControlStateNormal];
     [self.view addSubview:firstButton];
     [firstButton addTarget:self
                     action:@selector(buttonPressed:)
@@ -30,26 +35,25 @@
     
     UIButton *secondButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     secondButton.frame = CGRectMake(100, 300, 100, 44);
-    [secondButton setTitle:@"Button" forState:UIControlStateNormal];
+    [secondButton setTitle:@"100%" forState:UIControlStateNormal];
     [self.view addSubview:secondButton];
     [secondButton addTarget:self
                     action:@selector(buttonPressed:)
           forControlEvents:UIControlEventTouchUpInside];
     [secondButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
-    
-    
-    
-    UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 30, 200, 44)];
-    firstLabel.backgroundColor = [UIColor clearColor];
-    firstLabel.text = @"Zeken Woozer";
-    [self.view addSubview:firstLabel];
+
 }
 
 - (void)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Button pressed, sender: %@", sender);
-    self.view.alpha = ((double)arc4random() / 0x100000000);
-    [sender removeFromSuperview];
+    
+    if ([sender.titleLabel.text isEqualToString:@"50%"]) {
+    self.view.alpha = .5;
+        } else {
+            self.view.alpha = 1;
+        }
+    
 }
 
 
