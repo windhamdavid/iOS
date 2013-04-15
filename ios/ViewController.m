@@ -21,12 +21,23 @@
 	
     UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     firstButton.frame = CGRectMake(100, 100, 100, 44);
-    [firstButton setTitle:@"Button" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Make 50%" forState:UIControlStateNormal];
     [self.view addSubview:firstButton];
     [firstButton addTarget:self
                     action:@selector(buttonPressed:)
           forControlEvents:UIControlEventTouchUpInside];
     [firstButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
+    
+    UIButton *secondButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    secondButton.frame = CGRectMake(100, 300, 100, 44);
+    [secondButton setTitle:@"Button" forState:UIControlStateNormal];
+    [self.view addSubview:secondButton];
+    [secondButton addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
+    [secondButton setTitle:@"Clicked" forState:UIControlStateHighlighted];
+    
+    
     
     UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 30, 200, 44)];
     firstLabel.backgroundColor = [UIColor clearColor];
@@ -38,6 +49,7 @@
 {
     NSLog(@"Button pressed, sender: %@", sender);
     self.view.alpha = ((double)arc4random() / 0x100000000);
+    [sender removeFromSuperview];
 }
 
 
