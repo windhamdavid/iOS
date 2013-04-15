@@ -18,12 +18,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.49 green:0.59 blue:0.59 alpha:1.0];
-    
+	
     UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 30, 200, 44)];
     firstLabel.backgroundColor = [UIColor clearColor];
     firstLabel.text = @"Zeken Woozer";
     [self.view addSubview:firstLabel];
-	
+    
     UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     firstButton.frame = CGRectMake(100, 100, 100, 44);
     [firstButton setTitle:@"50%" forState:UIControlStateNormal];
@@ -47,13 +47,11 @@
 - (void)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Button pressed, sender: %@", sender);
-    
     if ([sender.titleLabel.text isEqualToString:@"50%"]) {
-    self.view.alpha = .5;
-        } else {
-            self.view.alpha = 1;
-        }
-    
+        self.view.alpha = .5;
+    } else {
+    }
+    self.view.alpha = 1;
 }
 
 
